@@ -1,6 +1,6 @@
-import puppeteer from 'puppeteer';
+import puppeteer from "puppeteer";
 
-describe('Inn Form', () => {
+describe("Inn Form", () => {
   let browser;
   let page;
 
@@ -9,31 +9,31 @@ describe('Inn Form', () => {
       headless: false,
       slowMo: 100,
       devtools: true,
-    }); 
+    });
 
     page = await browser.newPage();
   });
 
-  test('Form should render on page start', async () => {
-    await page.goto('http://localhost:8080');
+  test("Form should render on page start", async () => {
+    await page.goto("http://localhost:8080");
 
-    await page.waitFor('.form');
+    await page.waitForSelector(".form");
   });
 
-  test('When the button is clicked add class .tooltip and .popover', async () => {
+  test("When the button is clicked add class .tooltip and .popover", async () => {
     jest.setTimeout(20000);
-    await page.goto('http://localhost:8080');
+    await page.goto("http://localhost:8080");
 
-    await page.waitFor('.form');
+    await page.waitForSelector(".form");
 
-    const form = await page.$('.form');
-    const submit = await form.$('.submit');
+    const form = await page.$(".form");
+    const submit = await form.$(".btn");
 
     await submit.click();
-    await submit.mouseover();
+    await submit.onmouseover;
 
-    await page.waitFor('.popover');
-    await page.waitFor('.tooltip');
+    await page.waitForSelector(".popover");
+    await page.waitForSelector(".tooltip");
   });
 
   afterEach(async () => {
