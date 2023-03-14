@@ -37,5 +37,5 @@ describe("Inn Form", () => {
 
     await page.waitForSelector(".popover");
     await page.waitForSelector(".tooltip");
-  }); 
+  });
 });
