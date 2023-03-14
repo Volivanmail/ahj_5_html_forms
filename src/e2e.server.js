@@ -1,15 +1,18 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-const webpack = require('webpack');
-// eslint-disable-next-line import/no-extraneous-dependencies
-const WebpackDevServer = require('webpack-dev-server');
-const config = require('../webpack.config');
+// eslint-disable-next-line no-undef
+const webpack = require("webpack");
+// eslint-disable-next-line no-undef
+const WebpackDevServer = require("webpack-dev-server");
+// eslint-disable-next-line no-undef
+const config = require("../webpack.config");
 
 const server = new WebpackDevServer(webpack(config), {});
-server.listen(8080, 'localhost', (err) => {
+server.listen(8080, "localhost", (err) => {
   if (err) {
     return;
   }
+  // eslint-disable-next-line no-undef
   if (process.send) {
-    process.send('ok');
+    // eslint-disable-next-line no-undef
+    process.send("ok");
   }
 });
