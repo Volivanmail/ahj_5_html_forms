@@ -1,22 +1,13 @@
 const webpack = require('webpack');
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common');
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('../webpack.prod');
 
-module.exports = merge(common, {
-  // Set the mode to development or production
-  mode: 'development',
-  // Control how source maps are generated
-  devtool: 'inline-source-map',
-
-  // Spin up a server for quick development
-  devServer: {
-    historyApiFallback: true,
-    open: true,
-    compress: true
-  },
-
-  plugins: [
-    // Only update what has changed on hot reload
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+const server = new WebpackDevServer(webpack(config), {});
+server.listen(8080, 'localhost', (err) => {
+  if (err) {
+    return;
+  }
+  if (process.send) {
+    process.send('ok');
+  }
 });
