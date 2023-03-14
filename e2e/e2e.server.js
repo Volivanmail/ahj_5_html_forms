@@ -1,13 +1,13 @@
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const config = require('../webpack.prod');
+const webpack = require("webpack");
+const WebpackDevServer = require("webpack-dev-server");
+const config = require("../webpack.prod");
 
 const server = new WebpackDevServer(webpack(config), {});
-server.listen(8080, 'localhost', (err) => {
+server.listen(8080, "localhost", (err) => {
   if (err) {
     return;
   }
   if (process.send) {
-    process.send('ok');
+    process.send("ok");
   }
 });
