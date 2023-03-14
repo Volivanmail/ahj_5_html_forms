@@ -4,7 +4,7 @@ describe("Inn Form", () => {
   let browser;
   let page;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     browser = await puppeteer.launch({
       headless: false,
       slowMo: 100,
@@ -36,7 +36,7 @@ describe("Inn Form", () => {
     await page.waitForSelector(".tooltip");
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     await browser.close();
   });
 });
