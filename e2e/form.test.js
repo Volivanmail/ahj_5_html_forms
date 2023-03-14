@@ -1,12 +1,14 @@
 import puppeteer from "puppeteer";
+import { fork } from "child_process";
 
 describe("Inn Form", () => {
   let browser;
   let page;
+  let server;
 
   beforeAll(async () => {
     browser = await puppeteer.launch({});
-
+    server = fork(`${__dirname}/e2e.server.js`);
     page = await browser.newPage();
   });
 
