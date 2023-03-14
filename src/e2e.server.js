@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-undef
 const webpack = require("webpack");
 // eslint-disable-next-line no-undef
-const WebpackDevServer = require("webpack-dev-server");
+const WebpackDevServer = require("webpack serve");
 // eslint-disable-next-line no-undef
-const config = require("../webpack.prod");
+const config = require("../webpack.common");
 
 const server = new WebpackDevServer(webpack(config), {});
 server.listen(8080, "localhost", (err) => {
