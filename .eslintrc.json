@@ -11,7 +11,13 @@
     "ecmaVersion": 2018
   },
   "rules": {
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "no-restricted-syntax": [
+      "error",
+      "LabeledStatement",
+      "WithStatement"
+    ],
+    "consistent-return":"off",
   },
   "overrides": [
     {
