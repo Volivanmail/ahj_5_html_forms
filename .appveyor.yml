@@ -16,9 +16,9 @@ build: off  # отключаем встроенную в appveyor систему
 build_script:
   - npm run build   # команда сборки
 
-# разблокировать при наличии тестов
-# test_script:
-#   - npm run lint && npm test  # скрипт тестирования
+разблокировать при наличии тестов
+test_script:
+  - npm run lint && npm test  # скрипт тестирования
 
 deploy_script:  # скрипт развёртывания
   - git config --global credential.helper store
