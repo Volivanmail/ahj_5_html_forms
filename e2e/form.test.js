@@ -12,11 +12,6 @@ describe("Inn Form", () => {
     page = await browser.newPage();
   });
 
-  afterAll(async () => {
-    server.kill();
-    await browser.close();
-  });
-
   test("Form should render on page start", async () => {
     await page.goto("http://localhost:8888");
 
@@ -37,5 +32,10 @@ describe("Inn Form", () => {
 
     await page.waitForSelector(".popover");
     await page.waitForSelector(".tooltip");
+  });
+
+  afterAll(async () => {
+    server.kill();
+    await browser.close();
   });
 });
