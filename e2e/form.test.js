@@ -35,6 +35,7 @@ describe("Inn Form", () => {
   });
 
   afterAll(async () => {
+    server.kill();
     await browser.close();
   });
 });
