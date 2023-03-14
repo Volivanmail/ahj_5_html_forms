@@ -15,14 +15,14 @@ describe("Inn Form", () => {
   });
 
   test("Form should render on page start", async () => {
-    await page.goto("http://localhost:8080");
+    await page.goto("http://localhost:8888");
 
     await page.waitForSelector(".form");
   });
 
   test("When the button is clicked add class .tooltip and .popover", async () => {
     jest.setTimeout(20000);
-    await page.goto("http://localhost:8080");
+    await page.goto("http://localhost:8888");
 
     await page.waitForSelector(".form");
 
