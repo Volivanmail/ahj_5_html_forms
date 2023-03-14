@@ -13,7 +13,7 @@ describe("Inn Form", () => {
   });
 
   afterAll(async () => {
-    // server.kill();
+    server.kill();
     await browser.close();
   });
 
